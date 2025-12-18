@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -30,12 +31,15 @@ const faqs = [
   }
 ];
 
-function FAQItem({ question, answer, isOpen, onClick }: { 
-  question: string; 
-  answer: string; 
-  isOpen: boolean; 
-  onClick: () => void 
-}) {
+// Define FAQItemProps interface to resolve property 'key' not existing on anonymous type error
+interface FAQItemProps {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onClick: () => void;
+}
+
+function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
   return (
     <div className="border-b border-white/[0.05] overflow-hidden">
       <button

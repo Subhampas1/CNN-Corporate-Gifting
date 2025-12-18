@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 
 interface UnderlineTextProps {
-  children: React.ReactNode;
+  // Make children optional to resolve JSX type mismatch errors across multiple components
+  children?: React.ReactNode;
   className?: string;
   underlineClassName?: string;
   delay?: number;
